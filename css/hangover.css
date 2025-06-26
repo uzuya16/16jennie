@@ -1,0 +1,202 @@
+@charset "UTF-8" ;
+@font-face {
+    font-family: 'Paperlogy-1Thin';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-1Thin.woff2') format('woff2');
+    font-weight: 100;
+    font-style: normal;
+}
+              @font-face {
+    font-family: 'Paperlogy-2ExtraLight';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-2ExtraLight.woff2') format('woff2');
+    font-weight: 200;
+    font-style: normal;
+}
+              @font-face {
+    font-family: 'Paperlogy-3Light';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-3Light.woff2') format('woff2');
+    font-weight: 300;
+    font-style: normal;
+}
+              @font-face {
+    font-family: 'Paperlogy-4Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-4Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+}
+              @font-face {
+    font-family: 'Paperlogy-5Medium';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-5Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+              @font-face {
+    font-family: 'Paperlogy-6SemiBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-6SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+}
+              @font-face {
+    font-family: 'Paperlogy-7Bold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-7Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+              @font-face {
+    font-family: 'Paperlogy-8ExtraBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+              @font-face {
+    font-family: 'Paperlogy-9Black';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-9Black.woff2') format('woff2');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'InkLipquid';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/InkLipquid.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*          초기셋팅             */
+*{margin: 0; padding: 0;}
+li{list-style: none;}
+a{text-decoration: none; color: #333;}
+img{display: block;}
+
+
+
+
+html, body{height: 100%; }
+#visual{width: 100%; height: 100%; background: url(../img/bg.png) center top no-repeat; background-size: cover;animation: bg 18s linear infinite alternate;}
+@keyframes bg{
+    0% {background-size: 100%;}
+    100% {background-size: 150%;}
+}
+#visual .jennie {position: absolute; left: 50%; bottom: 0; transform: translate(-80%); }
+
+
+
+
+header {width: 1400px; height: 130px; position: absolute; left: 50%; transform: translateX(-50%); display: flex; justify-content: space-between; padding: 0 20px; align-items: center; box-sizing: border-box; transition: 0.2s;z-index: 1;}
+header:hover {height: 150px;}
+
+header h1 {transform: scale(0.6); transition: 0.2s;}
+header:hover h1 {transform: scale(1);;}
+
+/* padding 20을 줘서 1440이 됨. 그래서 박스사이즈를 다시 돌리기 위해서 box-sizing:border-box */
+
+/* header:hover {background: rgba(255,255,225,0.2) } 
+filter:blur() */
+
+header nav .gnb{display: flex;}
+header nav .gnb:hover li{opacity: 0.3; filter: blur(1px);}
+header nav .gnb li {font-size: 20px; font-family: 'Paperlogy-1Thin'; transition: 0.3s;}
+header nav .gnb li:hover {opacity: 1; font-family: 'Paperlogy-4Regular';filter: blur(0); text-shadow: 0 0 10px #fbff00;}
+header nav .gnb li a {color: antiquewhite; padding: 25px 30px; display: block; }
+
+#visual .text {width: 350px; height: 600px; position: absolute; left: 50%; ; transform: translate(-50%, 250px); font-family: 'InkLipquid'; font-size: 40px; color: aliceblue;}
+#visual .text ul {display: flex; justify-content: flex-start; gap: 50px; font-style: italic; flex-direction: row-reverse;}
+
+
+#visual .text ul li span {text-align: center; display: block; position: relative;right: 0; opacity: 0; animation: hope 2s forwards /* infinite */;}
+/*  forwards 마지막 애니메이션에서 멈추어라 명령어임 
+    infinite 반복해라 명령어 */
+/* @keyframes hope {
+    0% {position: relative;right: 100px ;opacity: 0;}
+    100% {position: relative;right: 0 ;opacity: 1;}
+} */
+@keyframes hope {
+    0% {right: 300px; opacity: 0; top: 50px; filter: blur(10px);}
+    60% {right: -10px;}
+    100% {right: 0; opacity: 1; top: 0px; filter: blur(0px);}
+}
+
+
+/* 첫번쨰줄 */
+#visual .text ul li:nth-child(1) span:nth-child(1) {animation-delay: 0.1s; font-size: 70px;}
+#visual .text ul li:nth-child(1) span:nth-child(2) {animation-delay: 0.2s;}
+#visual .text ul li:nth-child(1) span:nth-child(3) {animation-delay: 0.3s;}
+#visual .text ul li:nth-child(1) span:nth-child(4) {animation-delay: 0.4s;}
+#visual .text ul li:nth-child(1) span:nth-child(5) {animation-delay: 0.5s;}
+#visual .text ul li:nth-child(1) span:nth-child(6) {animation-delay: 0.6s;}
+#visual .text ul li:nth-child(1) span:nth-child(7) {animation-delay: 0.7s;}
+#visual .text ul li:nth-child(1) span:nth-child(8) {animation-delay: 0.8s;}
+#visual .text ul li:nth-child(1) span:nth-child(9) {animation-delay: 0.9s;}
+#visual .text ul li:nth-child(1) span:nth-child(10) {animation-delay: 1.1s;}
+
+/* 두번째줄 */
+#visual .text ul li:nth-child(2) span:nth-child(1) {animation-delay: 1.2s;}
+#visual .text ul li:nth-child(2) span:nth-child(2) {animation-delay: 1.3s;}
+#visual .text ul li:nth-child(2) span:nth-child(3) {animation-delay: 1.4s;}
+#visual .text ul li:nth-child(2) span:nth-child(4) {animation-delay: 1.5s;}
+#visual .text ul li:nth-child(2) span:nth-child(5) {animation-delay: 1.6s;}
+#visual .text ul li:nth-child(2) span:nth-child(6) {animation-delay: 1.7s;}
+#visual .text ul li:nth-child(2) span:nth-child(7) {animation-delay: 1.8s;}
+#visual .text ul li:nth-child(2) span:nth-child(8) {animation-delay: 1.9s;}
+#visual .text ul li:nth-child(2) span:nth-child(9) {animation-delay: 2s;}
+#visual .text ul li:nth-child(2) span:nth-child(10) {animation-delay: 2.1s;}
+
+/* 세번째줄 */
+#visual .text ul li:nth-child(3) span:nth-child(1) {animation-delay: 2.3s;}
+#visual .text ul li:nth-child(3) span:nth-child(2) {animation-delay: 2.4s;}
+#visual .text ul li:nth-child(3) span:nth-child(3) {animation-delay: 2.5s;}
+#visual .text ul li:nth-child(3) span:nth-child(4) {animation-delay: 2.6s;}
+#visual .text ul li:nth-child(3) span:nth-child(5) {animation-delay: 2.7s;}
+#visual .text ul li:nth-child(3) span:nth-child(6) {animation-delay: 2.8s;}
+#visual .text ul li:nth-child(3) span:nth-child(7) {animation-delay: 2.9s;}
+#visual .text ul li:nth-child(3) span:nth-child(8) {animation-delay: 3s;}
+#visual .text ul li:nth-child(3) span:nth-child(9) {animation-delay: 3.1s;}
+#visual .text ul li:nth-child(3) span:nth-child(10) {animation-delay: 3.2s;}
+#visual .text ul li:nth-child(3) span:nth-child(11) {animation-delay: 3.3s;}
+
+/* 
+#visual .text ul li span {display: block; margin-left: 100px; opacity: 0; transition: 2s;} */
+/* #visual .text:hover ul li span {margin-left: 0; transition: 2s;} */
+/* #visual .text:hover ul li span {margin-left: 0; opacity: 1;  } */
+#visual .text ul li span.space {margin-bottom: 30px;}
+/* span.space 는 span붙어있는 .space라서 붙여씀 */
+
+#visual .playbtn {position: absolute; left: 50%; top: 50%; transform: translate(-620px,-50%);}
+#visual .playbtn audio {width: 50px;height: 30px; display: none;}
+
+/* 브라우저의 기준(화면) position: absolute; left: 50%; top: 50%
+transform: translate*본인크기기준(x축-가로,y축-세로) */
+/* 가운데로 보내고 싶을때 #visual .text {width: 600px; height: 350px; border: 1px solid yellow; position: absolute; left: 50%; top:50%; transform: translate(-50%, -50%);} border -radius:10px*/
+
+
+#visual .playbtn img {cursor: pointer;}
+#visual .playbtn img#pausebtn{display: none;}
+
+/* 순수스크립트 바나나라고 함 
+자바스크립트 -> 제이쿼리/리액트/뷰/앵귤러/스와이퍼슬라이드/지샵 */
+
+
+
+/* html에서는 표시하지 않는다는 style="display: none; css에서는 스타일을 모아둔 파일이기 때문에 style 제외 display: none으로 적용 */
+
+/* #visual .playbtn img {cursor: pointer;커서에 올리면 마우스에 손가락모습이 표현} */
+
+.snow1 {width: 100%; height: 100%; position: absolute; background: url(../img/snow.png); animation: snow1 13s linear infinite; opacity: 0.1;}
+
+@keyframes snow1{ 
+    0% {background-position: 0 0;}
+    100% {background-position: -800px 800px;}
+}
+
+.snow2 {width: 100%; height: 100%; position: absolute; background: url(../img/snow.png); animation: snow2 13s linear infinite; opacity: 0.1;}
+
+@keyframes snow2{ 
+    0% {background-position: 0 0;}
+    100% {background-position: -600px 1800px;}
+}
+
+.snow3 {width: 100%; height: 100%; position: absolute; background: url(../img/snow.png); animation: snow3 13s linear infinite; opacity: 0.5; background-size: 50%; }
+
+@keyframes snow3{ 
+    0% {background-position: 0 0;}
+    100% {background-position: -1200px 1000px;}
+}
